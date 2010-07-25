@@ -32,7 +32,7 @@ function display_tencent($args = ''){
 
 		echo '<ul style="list-style-type:none;">';
 		for($i = 0;$i <$number;$i++){
-			echo '<li><div class="microblog"><a href="http://t.qq.com/'.$username.'" rel="external nofollow" title="来自 腾讯微博"><img class="microblog-ico" style="float:left;" alt="腾讯微博" src="'.WP_PLUGIN_URL.'/wordpress-tencent-microblog/txwb.gif"></a><span class="microblog-content">'.$decodedArray[contents][$i][content].'<span>  <span class="microblog-from" style="font-style:italic;opacity:0.6;">-'.$decodedArray[contents][$i][time].' 来自 '.$decodedArray[contents][$i][from].'-</span></div></li>';
+			echo '<li><div class="microblog"><a href="http://t.qq.com/'.$username.'" rel="external nofollow" title="来自 腾讯微博"><img class="microblog-ico" style="float:left;" alt="腾讯微博" src="'.WP_PLUGIN_URL.'/wordpress-tencent-microblog/txwb.gif" /></a><span class="microblog-content">'.$decodedArray[contents][$i][content].'</span>  <span class="microblog-from" style="font-style:italic;">-'.$decodedArray[contents][$i][time].' 来自 '.$decodedArray[contents][$i][from].'-</span></div></li>';
 		}
 		echo '</ul>';
 }
