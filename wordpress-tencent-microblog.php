@@ -54,7 +54,7 @@ class TencentMicroblog extends WP_Widget
 		$instance = wp_parse_args((array)$instance,array(
 		'title'=>'腾讯微博',
 		'username'=>'your-ID',
-		'api'=>'http://Q.hzlzh.com/',
+		'api[勿改]'=>'http://Q.hzlzh.com/',
 		'number'=>1,
 		'time'=>'3600'));
 		$title = htmlspecialchars($instance['title']);
