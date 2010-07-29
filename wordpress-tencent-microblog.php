@@ -8,7 +8,7 @@ Author: hzlzh
 Author URI: http://www.hzlzh.com
 
 */
-
+//如果显示发言为空，可能是第9行的copy()函数不能支持，请自行去掉28-30三行，并且将33行替代32行。
 if ( ! defined( 'WP_PLUGIN_URL' ) )
       define( 'WP_PLUGIN_URL', WP_CONTENT_URL. '/plugins' );//获得plugins网页路径
 if ( ! defined( 'WP_PLUGIN_DIR' ) )
@@ -24,10 +24,13 @@ function display_tencent($args = ''){
 	$r = wp_parse_args($args,$default);
 	extract($r);
 	$url = $api.$username;
+	//here!!!
 	$e = WP_PLUGIN_DIR.'/wordpress-tencent-microblog/'.$username.'.json';
 	if ( !is_file($e) || (time() - filemtime($e)) > $time ){//当缓存不存在或超过 $time 时更新
 	copy($url, $e);}//拷贝到本地，一般主机都支持这个函数,需要目录的写入权限
-	$jsonObject = @file_get_contents($e);
+	//here!!!
+	$jsonObject = file_get_contents($e);
+//$jsonObject = file_get_contents($url);    //<---------替换上一行
 	$decodedArray = json_decode($jsonObject, true);
 
 		echo '<ul style="list-style-type:none;">';
