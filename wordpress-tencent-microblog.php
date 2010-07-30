@@ -8,7 +8,7 @@ Author: hzlzh
 Author URI: http://www.hzlzh.com
 
 */
-//如果显示发言为空，可能是第9行的copy()函数不能支持，请自行去掉28-30三行，并且将33行替代32行。
+//如果显示发言为空，可能是第30行的copy()函数不能支持，请自行去掉27-31行，并且将33行替代32行。
 if ( ! defined( 'WP_PLUGIN_URL' ) )
       define( 'WP_PLUGIN_URL', WP_CONTENT_URL. '/plugins' );//获得plugins网页路径
 if ( ! defined( 'WP_PLUGIN_DIR' ) )
