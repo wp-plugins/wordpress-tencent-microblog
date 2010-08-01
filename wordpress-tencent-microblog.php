@@ -66,7 +66,7 @@ class TencentMicroblog extends WP_Widget
 		<p><label for="'.$this->get_field_name('username').'">用户名:<input style="width:200px;" id="'.$this->get_field_id('username').'" name="'.$this->get_field_name('username').'" type="text" value="'.$username.'" /></label></p>
 		<p><label for="'.$this->get_field_name('api').'">API地址:<input style="width:200px;" id="'.$this->get_field_id('api').'" name="'.$this->get_field_name('api').'" type="text" value="'.$api.'" /></label></p>
 		<p><label for="'.$this->get_field_name('number').'">显示数量:<input style="width:200px" id="'.$this->get_field_id('number').'" name="'.$this->get_field_name('number').'" type="text" value="'.$number.'" /></label></p>
-		<p><label for="'.$this->get_field_name('time').'">缓存时间:<input style="width:200px" id="'.$this->get_field_id('time').'" name="'.$this->get_field_name('time').'" type="text" value="'.$time.'" />毫秒</label></p>';
+		<p><label for="'.$this->get_field_name('time').'">缓存时间:<input style="width:200px" id="'.$this->get_field_id('time').'" name="'.$this->get_field_name('time').'" type="text" value="'.$time.'" />秒</label></p>';
 	}
 	
 	//更新函数
