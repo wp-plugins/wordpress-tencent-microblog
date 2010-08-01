@@ -3,7 +3,7 @@
 Plugin Name: wordpress-tencent-microblog
 Plugin URI: http://www.hzlzh.com/wordpress-tencent-microblog/
 Description:显示腾讯微博发言的插件，无需密码，安全可靠。采用了缓存机制，自定义刷新时间，不占用站点加载速度。可以在[外观]--[小工具]中调用，或者在任意位置使用 <code>&lt;?php display_tencent('username=you-ID&number=5'); ?&gt;</code> 调用。
-Version: 1.0.3
+Version: 1.0.5
 Author: hzlzh
 Author URI: http://www.hzlzh.com
 
@@ -24,13 +24,13 @@ function display_tencent($args = ''){
 	$r = wp_parse_args($args,$default);
 	extract($r);
 	$url = $api.$username;
-	//here!!!
+	//here begin!!!
 	$e = WP_PLUGIN_DIR.'/wordpress-tencent-microblog/'.$username.'.json';
 	if ( !is_file($e) || (time() - filemtime($e)) > $time ){//当缓存不存在或超过 $time 时更新
 	copy($url, $e);}//拷贝到本地，一般主机都支持这个函数,需要目录的写入权限
-	//here!!!
+	//here end!!!
 	$jsonObject = file_get_contents($e);
-//$jsonObject = file_get_contents($url);    //<---------替换上一行
+	//$jsonObject = file_get_contents($url);    //<---------替换上一行
 	$decodedArray = json_decode($jsonObject, true);
 
 		echo '<ul style="list-style-type:none;">';
