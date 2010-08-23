@@ -4,7 +4,7 @@ Donate link: http://www.hzlzh.com/wordpress-tencent-microblog/
 Tags: 腾讯微博,QQ,微博,腾讯,同步
 Requires at least: 2.7
 Tested up to: 3.0.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 
 显示腾讯微博发言的插件，无需密码，安全可靠，采取缓存机制。利用民间API，支持1-10条发言输出。
 
@@ -58,6 +58,9 @@ Stable tag: 1.0.5
 *目前调取显示数量为1条，更多需要API的支持，尽在下一个版本
 
 == Upgrade Notice ==
+
+= V 1.0.6 =
+为了减少API 被禁止的可能，使用新的API地址，http://q.hzlzh.com/wordpress/
 
 = V 1.0.5 =
 修改了几个重要的注释，提供了WIN主机无法使用copy()函数的解决方案注释

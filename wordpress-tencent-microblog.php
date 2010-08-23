@@ -3,7 +3,7 @@
 Plugin Name: wordpress-tencent-microblog
 Plugin URI: http://www.hzlzh.com/wordpress-tencent-microblog/
 Description:显示腾讯微博发言的插件，无需密码，安全可靠。采用了缓存机制，自定义刷新时间，不占用站点加载速度。可以在[外观]--[小工具]中调用，或者在任意位置使用 <code>&lt;?php display_tencent('username=you-ID&number=5'); ?&gt;</code> 调用。
-Version: 1.0.5
+Version: 1.0.6
 Author: hzlzh
 Author URI: http://www.hzlzh.com
 
@@ -19,7 +19,7 @@ function display_tencent($args = ''){
 	$default = array(
 		'username'=>'your-ID',
 		'number'=>'1',
-		'api'=>'http://Q.hzlzh.com/',
+		'api'=>'http://Q.hzlzh.com/wordpress',
 		'time'=>'3600');
 	$r = wp_parse_args($args,$default);
 	extract($r);
@@ -54,7 +54,7 @@ class TencentMicroblog extends WP_Widget
 		$instance = wp_parse_args((array)$instance,array(
 		'title'=>'腾讯微博',
 		'username'=>'your-ID',
-		'api'=>'http://Q.hzlzh.com/',
+		'api'=>'http://Q.hzlzh.com/wordpress/',
 		'number'=>1,
 		'time'=>'3600'));
 		$title = htmlspecialchars($instance['title']);
@@ -86,7 +86,7 @@ class TencentMicroblog extends WP_Widget
 		$title = apply_filters('widget_title',empty($instance['title']) ? '&nbsp;' : $instance['title']);
 		$username = empty($instance['username']) ? 'your-ID' : $instance['username'];
 		$number = empty($instance['number']) ? 1 : $instance['number'];
-		$api = empty($instance['api']) ? 'http://Q.hzlzh.com/' : $instance['api'];
+		$api = empty($instance['api']) ? 'http://Q.hzlzh.com/wordpress/' : $instance['api'];
 		$time = empty($instance['time']) ? 3600 : $instance['time'];
 		
 		echo $before_widget;
