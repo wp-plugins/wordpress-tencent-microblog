@@ -10,7 +10,7 @@ Stable tag: 1.0.6
 
 == Description ==
 
-显示腾讯微博发言的插件，无需密码，即可从 <a href="http://q.hzlzh.com/">民间API</a> 处获得消息，显示在wordpress侧边栏上，安全可靠。采用了缓存机制，可自定义刷新时间，不占用站点加载速度。可以在[外观]--[小工具]中调用，也可以在任意位置使用`<?php display_tencent('username=you-ID&number=5'); ?>` 调用。
+显示腾讯微博发言的插件，无需密码，即可从 <a href="http://q.hzlzh.com/wordpress/">民间API</a> 处获得消息，显示在wordpress侧边栏上，安全可靠。采用了缓存机制，可自定义刷新时间，不占用站点加载速度。可以在[外观]--[小工具]中调用，也可以在任意位置使用`<?php display_tencent('username=you-ID&number=5'); ?>` 调用。
 
 == Installation ==
 
