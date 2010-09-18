@@ -8,7 +8,7 @@ Author: hzlzh
 Author URI: http://www.hzlzh.com
 
 */
-//如果显示发言为空，可能是第30行的copy()函数不能支持，请自行去掉27-31行，并且将33行替代32行。
+//如果有遇到问题，请到http://www.hzlzh.com/wordpress-tencent-microblog/ 得到服务支持！
 if ( ! defined( 'WP_PLUGIN_URL' ) )
       define( 'WP_PLUGIN_URL', WP_CONTENT_URL. '/plugins' );//获得plugins网页路径
 if ( ! defined( 'WP_PLUGIN_DIR' ) )
@@ -24,13 +24,26 @@ function display_tencent($args = ''){
 	$r = wp_parse_args($args,$default);
 	extract($r);
 	$url = $api.$username;
-	//here begin!!!
+	if(function_exists("copy")){
 	$e = WP_PLUGIN_DIR.'/wordpress-tencent-microblog/'.$username.'.json';
-	if ( !is_file($e) || (time() - filemtime($e)) > $time ){//当缓存不存在或超过 $time 时更新
+	if ( !is_file($e) || (time() - filemtime($e)) > $time|| filesize($e) < 1000){
+	//当缓存不存在或超过 $time 时更新,或者得到文件大小小于1000
 	copy($url, $e);}//拷贝到本地，一般主机都支持这个函数,需要目录的写入权限
-	//here end!!!
 	$jsonObject = file_get_contents($e);
-	//$jsonObject = file_get_contents($url);    //<---------替换上一行
+}else{
+	if(function_exists("file_get_contents")){
+	$jsonObject = file_get_contents($url);
+}else{
+	if(function_exists( "file")){
+	$f=file($url);
+	for($i=0;$i<count($f);$i++){
+		$jsonObject.=$f[$i];
+	}
+}else{
+echo "<div>该主机不支持本插件，由于禁用了copy()或file_get_contents()等函数，请在http://www.hzlzh.com/wordpress-tencent-microblog/ 告知出错原因，便于我维护更新插件！</div>";
+		}
+	}
+}
 	$decodedArray = json_decode($jsonObject, true);
 
 		echo '<ul style="list-style-type:none;">';
