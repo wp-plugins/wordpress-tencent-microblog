@@ -19,7 +19,7 @@ function display_tencent($args = ''){
 	$default = array(
 		'username'=>'your-ID',
 		'number'=>'1',
-		'api'=>'http://Q.hzlzh.com/wordpress',
+		'api'=>'http://Q.hzlzh.com/wordpress/',
 		'time'=>'3600');
 	$r = wp_parse_args($args,$default);
 	extract($r);
