@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: wordpress-tencent-microblog
+Plugin Name: Wordpress Tencent Microblog
 Plugin URI: http://www.hzlzh.com/wordpress-tencent-microblog/
 Description:显示腾讯微博发言的插件，无需密码，安全可靠。采用了缓存机制，自定义刷新时间，不占用站点加载速度。可以在[外观]--[小工具]中调用，或者在任意位置使用 <code>&lt;?php display_tencent('username=you-ID&number=5'); ?&gt;</code> 调用。
 Version: 1.0.7

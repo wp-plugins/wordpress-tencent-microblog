@@ -1,4 +1,4 @@
-=== wordpress-tencent-microblog ===
+=== Wordpress Tencent Microblog ===
 Contributors: hzlzh
 Donate link: http://www.hzlzh.com/wordpress-tencent-microblog/
 Tags: 腾讯微博,QQ,微博,腾讯,同步
