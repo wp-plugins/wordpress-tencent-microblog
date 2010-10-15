@@ -1,5 +1,5 @@
 === wordpress-tencent-microblog ===
-Contributors: HzlzH
+Contributors: hzlzh
 Donate link: http://www.hzlzh.com/wordpress-tencent-microblog/
 Tags: 腾讯微博,QQ,微博,腾讯,同步
 Requires at least: 2.7
