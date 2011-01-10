@@ -3,7 +3,7 @@
 Plugin Name: Wordpress Tencent Microblog
 Plugin URI: http://www.hzlzh.com/wordpress-tencent-microblog/
 Description:显示腾讯微博发言的插件，无需密码，安全可靠。采用了缓存机制，自定义刷新时间，不占用站点加载速度。可以在[外观]--[小工具]中调用，或者在任意位置使用 <code>&lt;?php display_tencent('username=you-ID&number=5'); ?&gt;</code> 调用。
-Version: 1.0.7
+Version: 1.0.9
 Author: hzlzh
 Author URI: http://www.hzlzh.com
 
@@ -19,7 +19,7 @@ function display_tencent($args = ''){
 	$default = array(
 		'username'=>'your-ID',
 		'number'=>'1',
-		'api'=>'http://Q.hzlzh.com/wordpress/',
+		'api'=>'http://q.hzlzh.com/',
 		'time'=>'3600');
 	$r = wp_parse_args($args,$default);
 	extract($r);
@@ -48,7 +48,7 @@ echo "<div>该主机不支持本插件，由于禁用了copy()或file_get_conten
 
 		echo '<ul style="list-style-type:none;">';
 		for($i = 0;$i <$number;$i++){
-			echo '<li><div class="microblog"><a href="http://t.qq.com/'.$username.'" rel="external nofollow" title="来自 腾讯微博" target="_blank"><img class="microblog-ico" style="float:left;padding-right:3px;" alt="腾讯微博" src="'.WP_PLUGIN_URL.'/wordpress-tencent-microblog/txwb.gif" /></a><span class="microblog-content">'.$decodedArray[contents][$i][content].'</span>  <span class="microblog-from" style="font-style:italic;">-'.$decodedArray[contents][$i][time].' 来自 '.$decodedArray[contents][$i][from].'-</span></div></li>';
+			echo '<li><div class="microblog"><a href="http://t.qq.com/'.$username.'" rel="external nofollow" title="来自 腾讯微博" target="_blank"><img class="microblog-ico" style="float:left;padding-right:3px;" alt="腾讯微博" src="'.WP_PLUGIN_URL.'/wordpress-tencent-microblog/txwb.gif" /></a><span class="microblog-content">'.$decodedArray [data][info][$i][origtext].'</span>  <span class="microblog-from" style="font-style:italic;">-'.date("Y/m/d", $decodedArray [data][info][$i][timestamp]).' 来自 '.$decodedArray [data][info][$i][from].'-</span></div></li>';
 		}
 		echo '</ul>';
 }
@@ -67,7 +67,7 @@ class TencentMicroblog extends WP_Widget
 		$instance = wp_parse_args((array)$instance,array(
 		'title'=>'腾讯微博',
 		'username'=>'your-ID',
-		'api'=>'http://Q.hzlzh.com/wordpress/',
+		'api'=>'http://q.hzlzh.com/',
 		'number'=>1,
 		'time'=>'3600'));
 		$title = htmlspecialchars($instance['title']);
@@ -75,7 +75,7 @@ class TencentMicroblog extends WP_Widget
 		$api = htmlspecialchars($instance['api']);
 		$number = htmlspecialchars($instance['number']);
 		$time = htmlspecialchars($instance['time']);
-		echo '<p><label for="'.$this->get_field_name('title').'">侧边栏标题:<input style="width:200px;" id="'.$this->get_field_id('title').'" name="'.$this->get_field_name('title').'" type="text" value="'.$title.'" /></label></p>
+		echo '<p><b>首次使用需激活API--></b><a target="_ablank" href="http://www.hzlzh.com/q/">点此激活认证</a></p><p style="color:#FF3333;">任何问题请@我的微博<a target="_ablank" href="http://t.qq.com/hzlzh_com">hzlzh_com</a> 反馈</p><p><label for="'.$this->get_field_name('title').'">侧边栏标题:<input style="width:200px;" id="'.$this->get_field_id('title').'" name="'.$this->get_field_name('title').'" type="text" value="'.$title.'" /></label></p>
 		<p><label for="'.$this->get_field_name('username').'">用户名:<input style="width:200px;" id="'.$this->get_field_id('username').'" name="'.$this->get_field_name('username').'" type="text" value="'.$username.'" /></label></p>
 		<p><label for="'.$this->get_field_name('api').'">API地址:<input style="width:200px;" id="'.$this->get_field_id('api').'" name="'.$this->get_field_name('api').'" type="text" value="'.$api.'" /></label></p>
 		<p><label for="'.$this->get_field_name('number').'">显示数量:<input style="width:200px" id="'.$this->get_field_id('number').'" name="'.$this->get_field_name('number').'" type="text" value="'.$number.'" /></label></p>
@@ -99,7 +99,7 @@ class TencentMicroblog extends WP_Widget
 		$title = apply_filters('widget_title',empty($instance['title']) ? '&nbsp;' : $instance['title']);
 		$username = empty($instance['username']) ? 'your-ID' : $instance['username'];
 		$number = empty($instance['number']) ? 1 : $instance['number'];
-		$api = empty($instance['api']) ? 'http://Q.hzlzh.com/wordpress/' : $instance['api'];
+		$api = empty($instance['api']) ? 'http://q.hzlzh.com/' : $instance['api'];
 		$time = empty($instance['time']) ? 3600 : $instance['time'];
 		
 		echo $before_widget;

@@ -3,20 +3,21 @@ Contributors: hzlzh
 Donate link: http://www.hzlzh.com/wordpress-tencent-microblog/
 Tags: 腾讯微博,QQ,微博,腾讯,同步
 Requires at least: 2.7
-Tested up to: 3.0.1
-Stable tag: 1.0.7
+Tested up to: 3.0.4
+Stable tag: 1.0.9
 
-显示腾讯微博发言的插件，无需密码，安全可靠，采取缓存机制。利用民间API，支持1-10条发言输出。
+显示腾讯微博发言的插件，Oauth登录认证，安全可靠，采取缓存机制，官方API，支持1-10条发言输出。
 
 == Description ==
 
-显示腾讯微博发言的插件，无需密码，即可从 <a href="http://q.hzlzh.com/wordpress/">民间API</a> 处获得消息，显示在wordpress侧边栏上，安全可靠。采用了缓存机制，可自定义刷新时间，不占用站点加载速度。可以在[外观]--[小工具]中调用，也可以在任意位置使用`<?php display_tencent('username=you-ID&number=5'); ?>` 调用。
+显示腾讯微博发言的插件，Oauth认证，即可从 <a href="http://q.hzlzh.com/">API</a> 处获得消息，显示在wordpress侧边栏上，安全可靠。采用了缓存机制，可自定义刷新时间，不占用站点加载速度。可以在[外观]--[小工具]中调用，也可以在任意位置使用`<?php display_tencent('username=you-ID&number=5'); ?>` 调用。
 
 == Installation ==
 
 1. 上传 `wordpress-tencent-microblog`插件到 `/wp-content/plugins/` 目录
 2. 在Wordpress后台控制面板"插件(Plugins)"菜单下激活"wordpress-tencent-microblog"
 3. 在Wordpress后台控制面板"外观(Appearance)->小工具(Widgets)"下使用`腾讯微博`
+4. 首次使用需激活API，点击后前往http://q.hzlzh.com/认证！
 
 == Frequently Asked Questions ==
 
@@ -24,11 +25,11 @@ Stable tag: 1.0.7
 
 可以！需要激活插件后，在任意位置使用`<?php display_tencent('username=you-ID&number=5'); ?>`调用即可，只需要修改`you-ID` 为你的腾讯微博帐号，`5`是你想要展示的条数。
 
-目前官方没有开放API，待开放时，我会第一时间更新。
 
-= 有腾讯微博官方的API吗？ =
 
-目前官方没有开放API，待开放时，我会第一时间更新。
+= 使用之前必须先Oauth认证登录吗？ =
+
+是的第一次使用，需要认证，一次认证终身使用。
 
 = 如果我的HOST不支持copy()函数怎么办？ =
 
@@ -40,6 +41,11 @@ Stable tag: 1.0.7
 2. 后台截图
 
 == Changelog ==
+
+= V 1.0.9 =
+*使用Oauth认证得到API来获取信息
+*修改少许代码兼容新版API
+*重新使用 http://q.hzlzh.com/为API
 
 = V 1.0.7 =
 *增加了对copy()，file_get_contents等函数的验证，在网站主机不支持饿情况下，会提示原因。
@@ -65,6 +71,8 @@ Stable tag: 1.0.7
 *目前调取显示数量为1条，更多需要API的支持，尽在下一个版本
 
 == Upgrade Notice ==
+= V 1.0.9 =
+使用全新腾讯官方API Oauth认证机制，安全可靠，高速！
 
 = V 1.0.7 =
 加入了新的缓存判断，可以有效避免空抓的现象出现
