@@ -1,6 +1,6 @@
 === Wordpress Tencent Microblog ===
 Contributors: hzlzh
-Donate link: http://www.hzlzh.com/wordpress-tencent-microblog/
+Donate link: http://zlz.im/wordpress-tencent-microblog/
 Tags: 腾讯微博,QQ,微博,腾讯,同步
 Requires at least: 2.7
 Tested up to: 3.0.4
@@ -33,7 +33,7 @@ Stable tag: 1.0.9
 
 = 如果我的HOST不支持copy()函数怎么办？ =
 
-可以去除缓存功能，直接抓取API即可，参见 <a href="http://www.hzlzh.com/wordpress-tencent-microblog/">使用说明</a>
+可以去除缓存功能，直接抓取API即可，参见 <a href="http://zlz.im/wordpress-tencent-microblog/">使用说明</a>
 
 == Screenshots ==
 
