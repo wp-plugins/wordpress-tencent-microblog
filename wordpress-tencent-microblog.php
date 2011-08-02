@@ -49,7 +49,7 @@ if($number - count($decodedArray['data']) >0)
 $number = count($decodedArray['data']);
 		echo '<ul style="list-style-type:none;">';
 		for($i = 0;$i< $number;$i++){
-			echo '<li><div class="microblog"><a href="http://t.qq.com/'.$username.'" rel="external nofollow" title="来自 腾讯微博" target="_blank"><img class="microblog-ico" style="float:left;padding-right:3px;" alt="腾讯微博" src="'.WP_PLUGIN_URL.'/wordpress-tencent-microblog/txwb.png" /></a><span class="microblog-content">'.$decodedArray['data'][$i]['content'].'</span>  <span class="microblog-from" style="font-size:smaller;">-'.date("Y/m/d", $decodedArray ['data'][$i]['timestamp']).' 来自 '.$decodedArray ['data'][$i]['fromarea'].'-</span></div></li>';
+			echo '<li><div class="microblog"><a href="http://t.qq.com/'.$username.'" rel="external nofollow" title="来自 腾讯微博" target="_blank" style="padding-right:3px;"><img class="microblog-ico"  alt="腾讯微博" src="'.WP_PLUGIN_URL.'/wordpress-tencent-microblog/txwb.png" /></a><span class="microblog-content">'.str_replace('&#160;',' ',$decodedArray['data'][$i]['content']).'</span>  <span class="microblog-from" style="font-size:smaller;">-'.date("Y/m/d", $decodedArray ['data'][$i]['timestamp']).' 来自 '.$decodedArray ['data'][$i]['fromarea'].'-</span></div></li>';
 		}
 		echo '</ul>';
 }
@@ -76,9 +76,9 @@ class TencentMicroblog extends WP_Widget
 		$api = htmlspecialchars($instance['api']);
 		$number = htmlspecialchars($instance['number']);
 		$time = htmlspecialchars($instance['time']);
-		echo '<p><b>首次使用获取官方API--></b><a target="_ablank" href="http://open.t.qq.com/resource.php?i=3,3">点此获取</a></p><p style="color:#FF3333;">任何问题请@我的微博<a target="_ablank" href="http://t.qq.com/hzlzh-com">hzlzh-com</a> 反馈</p><p><label for="'.$this->get_field_name('title').'">侧边栏标题:<input style="width:200px;" id="'.$this->get_field_id('title').'" name="'.$this->get_field_name('title').'" type="text" value="'.$title.'" /></label></p>
+		echo '<p><b>首次使用获取官方API--></b><a target="_blank" href="http://open.t.qq.com/resource.php?i=3,3">点此获取</a></p><p style="color:#FF3333;">任何问题请@我的微博<a target="_blank" href="http://t.qq.com/hzlzh-com">hzlzh-com</a> 反馈</p><p><label for="'.$this->get_field_name('title').'">侧边栏标题:<input style="width:200px;" id="'.$this->get_field_id('title').'" name="'.$this->get_field_name('title').'" type="text" value="'.$title.'" /></label></p>
 		<p><label for="'.$this->get_field_name('username').'">用户名:<input style="width:200px;" id="'.$this->get_field_id('username').'" name="'.$this->get_field_name('username').'" type="text" value="'.$username.'" /></label></p>
-		<p><label for="'.$this->get_field_name('api').'">API地址(sign值): <a target="_ablank" href="http://zlz.im/wordpress-tencent-microblog/">[?]</a><input style="width:200px;" id="'.$this->get_field_id('api').'" name="'.$this->get_field_name('api').'" type="text" value="'.$api.'" /></label></p>
+		<p><label for="'.$this->get_field_name('api').'">API地址(sign值): <a target="_blank" href="http://zlz.im/wordpress-tencent-microblog/">[?]</a><input style="width:200px;" id="'.$this->get_field_id('api').'" name="'.$this->get_field_name('api').'" type="text" value="'.$api.'" /></label></p>
 		<p><label for="'.$this->get_field_name('number').'">显示数量:<input style="width:200px" id="'.$this->get_field_id('number').'" name="'.$this->get_field_name('number').'" type="text" value="'.$number.'" /></label></p>
 		<p><label for="'.$this->get_field_name('time').'">缓存时间:<input style="width:200px" id="'.$this->get_field_id('time').'" name="'.$this->get_field_name('time').'" type="text" value="'.$time.'" />秒</label></p>';
 	}
