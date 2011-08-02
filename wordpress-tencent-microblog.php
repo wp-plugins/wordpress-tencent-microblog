@@ -45,8 +45,10 @@ echo "<div>该主机不支持本插件，由于禁用了copy()或file_get_conten
 	}
 }
 $decodedArray =json_decode($jsonObject, true);
+if($number - count($decodedArray['data']) >0)
+$number = count($decodedArray['data']);
 		echo '<ul style="list-style-type:none;">';
-		for($i = 0;$i<count($decodedArray['data']);$i++){
+		for($i = 0;$i< $number;$i++){
 			echo '<li><div class="microblog"><a href="http://t.qq.com/'.$username.'" rel="external nofollow" title="来自 腾讯微博" target="_blank"><img class="microblog-ico" style="float:left;padding-right:3px;" alt="腾讯微博" src="'.WP_PLUGIN_URL.'/wordpress-tencent-microblog/txwb.png" /></a><span class="microblog-content">'.$decodedArray['data'][$i]['content'].'</span>  <span class="microblog-from" style="font-size:smaller;">-'.date("Y/m/d", $decodedArray ['data'][$i]['timestamp']).' 来自 '.$decodedArray ['data'][$i]['fromarea'].'-</span></div></li>';
 		}
 		echo '</ul>';
