@@ -30,7 +30,8 @@ Stable tag: 1.1.0
 
 = 使用之前必须先Oauth认证登录吗？ =
 
-这一版不需要任何Oauth认证，只需要前往 <a href="http://open.t.qq.com/resource.php?i=3,3">官方开发平台</a>
+这一版不需要任何Oauth认证，参照 <a target
+="_blank" href="http://img.zlz.im/wp-tencent-microblog/tip.png">此图</a> 只需要前往 <a href="http://open.t.qq.com/resource.php?i=3,3">官方开发平台</a>
 
 = 如果我的HOST不支持copy()函数怎么办？ =
 
