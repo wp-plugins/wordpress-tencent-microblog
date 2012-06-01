@@ -19,7 +19,7 @@ Stable tag: 1.1.1
 3. 在Wordpress后台控制面板"外观(Appearance)->小工具(Widgets)"下使用`腾讯微博`
 4. 首次使用需激活API，点击后前往 http://dev.open.t.qq.com/websites/sign?explain=1 获取
 5. 将得到的sign值填写到插件后台即可
-6. 具体操作见 `How-to-use.png` 或 `http://plugins.svn.wordpress.org/wordpress-tencent-microblog/trunk/`
+6. 具体操作见 `How-to-use.png` 或 `http://plugins.svn.wordpress.org/wordpress-tencent-microblog/trunk/tip.png`
 
 == Frequently Asked Questions ==
 
